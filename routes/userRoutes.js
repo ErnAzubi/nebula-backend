@@ -11,6 +11,8 @@ const {
 const Joi = require("joi");
 const { Sequelize } = require("sequelize");
 
+const User = require("../User");
+
 const dBClient = new DynamoDBClient({ region: "us-east-2" });
 
 const convertDynamoDBItem = require("../helper");
@@ -79,17 +81,22 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/students", async (req, res) => {
-  const params = { TableName: "Students" };
+// router.get("/students", async (req, res) => {
+//   const params = { TableName: "Students" };
 
-  try {
-    const data = await dBClient.send(new ScanCommand(params));
-    const outputData = data.Items.map(convertDynamoDBItem);
-    res.status(200).send(outputData);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Error fetching users: " + error.message);
-  }
+//   try {
+//     const data = await dBClient.send(new ScanCommand(params));
+//     const outputData = data.Items.map(convertDynamoDBItem);
+//     res.status(200).send(outputData);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send("Error fetching users: " + error.message);
+//   }
+// });
+
+router.get("/students", async (req, res) => {
+  const users = await User.findAll();
+  return res.status(200).json(users);
 });
 
 router.get("/health-check", (req, res) => {
