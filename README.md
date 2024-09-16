@@ -1,7 +1,3 @@
-Here’s a sample **README** write-up for your Node.js backend application that runs in a Docker container:
-
----
-
 # NEBULA BACKEND PROJECT
 
 This repository contains a Node.js backend application that runs in a Docker container. The following guide will help you clone the project, set up the environment, build the Docker image, and run the container.
