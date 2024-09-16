@@ -30,7 +30,7 @@ Replace `<repository-url>` with the actual URL of the Git repository, and `<repo
 Use the following command to build the Docker image for your Nebula Backend App.
 
 ```bash
-docker build -t node-backend-app .
+docker build -t nebula-backend-app .
 ```
 
 - `-t` option tags the image (you can change the name `nebula-backend-app` to your preferred image name).
