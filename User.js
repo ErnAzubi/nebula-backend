@@ -11,7 +11,7 @@ const User = db.define(
     compliance: { type: Sequelize.STRING },
     personal_email: { type: Sequelize.STRING },
     q_comp: { type: Sequelize.STRING },
-    quiz: { type: Sequelize.INTEGER },
+    quiz_submitted: { type: Sequelize.INTEGER },
     rank: { type: Sequelize.INTEGER },
     score: { type: Sequelize.DECIMAL },
     student: { type: Sequelize.STRING },

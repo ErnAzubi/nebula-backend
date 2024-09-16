@@ -96,7 +96,21 @@ router.post("/login", async (req, res) => {
 
 router.get("/students", async (req, res) => {
   const users = await User.findAll();
-  return res.status(200).json(users);
+  const dataUsers = users.map((user) => ({
+    Email: user.email,
+    "A-Comp": user.a_comp,
+    Attendance: user.attendance,
+    Cohort: user.cohort,
+    Compliance: user.compliance,
+    "Personal Email": user.personal_email,
+    "Q-Comp": user.q_comp,
+    "Quiz Submitted": user.quiz_submitted,
+    Rank: user.rank,
+    Score: user.score,
+    Student: user.student,
+  }));
+  //console.log(users.email);
+  return res.status(200).json(dataUsers);
 });
 
 router.get("/health-check", (req, res) => {
