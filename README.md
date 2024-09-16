@@ -20,7 +20,8 @@ cd <repository-directory>
 
 Replace `<repository-url>` with the actual URL of the Git repository, and `<repository-directory>` with the name of the directory created after cloning.
 
-
+Run the project on the "UsingRDBMS" branch
+ 
 ### 3. Build Docker Image
 
 Use the following command to build the Docker image for your Nebula Backend App.
